@@ -11,12 +11,22 @@ public abstract class Duck {
     public void performFly(){
         flyBehavior.fly();    //Delegate to the behavior class
     }
-    
+        
     public void performQuack(){
         quackBehavior.quack(); //Delegate to the behavior class
     }
-    
+        
     public void swim(){
         System.out.println("All ducks float, even decoys!");
     }
+
+    //We can call these methods anytime we want to change the behavior of a duck in realtime.
+    public void setFlyBehavior(FlyBehavior fb){
+        flyBehavior = fb;
+    }
+
+    public void setQuackBehavior(QuackBehavior qb){
+        quackBehavior = qb;
+    }
+
 }
